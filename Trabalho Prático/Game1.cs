@@ -8,6 +8,7 @@ namespace Trabalho_Prático
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Terrain terrain;
 
         public Game1()
         {
@@ -18,7 +19,6 @@ namespace Trabalho_Prático
         protected override void Initialize()
         {
 
-
             base.Initialize();
         }
 
@@ -26,7 +26,7 @@ namespace Trabalho_Prático
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-
+            terrain = new Terrain(GraphicsDevice, Content);
         }
 
         protected override void UnloadContent()
@@ -48,7 +48,7 @@ namespace Trabalho_Prático
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            
+            terrain.Draw(GraphicsDevice);
 
             base.Draw(gameTime);
         }
